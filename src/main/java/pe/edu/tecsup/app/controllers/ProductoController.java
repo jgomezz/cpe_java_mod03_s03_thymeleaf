@@ -11,7 +11,15 @@ public class ProductoController {
 
 
     @GetMapping("/productos")
-    public String index( Model model) {
+    public String index(Model model) {
+
+        log.info("Iniciando index");
+
+        String mensaje = "Lista de productos";
+
+        // Se guarda el mensaje en el scope del modelo
+        model.addAttribute("msg", mensaje);
+
 
         return "productos/index";
     }
