@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "/>
 </head>
 <body>
 
@@ -15,27 +16,26 @@
 
     <p th:text="${estado}" />
 
-    <p th:text="${productos}" />
-
-    <table class="table" border="1" >
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Precio</th>
-        </tr>
-        </thead>
-        <tbody>
-            <tr th:each="item : ${productos}">
-                <td th:text="${item.id}"/>
-                <td th:text="${item.nombre}"/>
-                <td th:text="${item.descripcion}"/>
-                <td th:text="${item.precio}"/>
+    <div class="container-fluid">
+        <table class="table"  >
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
             </tr>
-        </tbody>
-    </table>
-
+            </thead>
+            <tbody>
+                <tr th:each="item : ${productos}">
+                    <td th:text="${item.id}"/>
+                    <td th:text="${item.nombre}"/>
+                    <td th:text="${item.descripcion}"/>
+                    <td th:text="${item.precio}"/>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>
