@@ -20,6 +20,10 @@ public class ProductoController {
         // Se guarda el mensaje en el scope del modelo
         model.addAttribute("msg", mensaje);
 
+        // ----
+        String estado = "Activo";
+        model.addAttribute("estado", estado);
+
 
         return "productos/index";
     }
