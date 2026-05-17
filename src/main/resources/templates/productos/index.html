@@ -6,19 +6,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "/>
-</head>
-<body>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "/>
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.min.css}"/>
 
-    <h1>
-        <span  th:text="${msg}" />
+</head>
+<body class="bg-light">
+
+
+    <h1 class="mb-2">
+        <i class="fas fa-box-open text-primary me-2"></i>
+        <span th:text="${msg}">Título</span>
     </h1>
 
-    <p th:text="${estado}" />
+    <p class="text-muted" th:text="${estado}">Estado</p>
 
-    <div class="container-fluid">
-        <table class="table"  >
-            <thead>
+
+    <div class="card shadow-sm">
+        <table class="table table-striped table-hover mb-0">
+            <thead class="table-dark">
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
@@ -31,11 +36,13 @@
                     <td th:text="${item.id}"/>
                     <td th:text="${item.nombre}"/>
                     <td th:text="${item.descripcion}"/>
-                    <td th:text="${item.precio}"/>
+                    <td class="text-end"  th:text="${item.precio}"/>
                 </tr>
             </tbody>
         </table>
     </div>
+
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 
 </body>
 </html>
